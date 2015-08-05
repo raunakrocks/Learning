@@ -14,6 +14,8 @@
 		D37A96BC1B71E6600067AAEE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D37A96BB1B71E6600067AAEE /* Images.xcassets */; };
 		D37A96BF1B71E6600067AAEE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D37A96BD1B71E6600067AAEE /* LaunchScreen.xib */; };
 		D37A96CB1B71E6600067AAEE /* ActivityAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D37A96CA1B71E6600067AAEE /* ActivityAppTests.m */; };
+		D37A96D71B71F6D30067AAEE /* EBCustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D37A96D51B71F6D30067AAEE /* EBCustomCell.m */; };
+		D37A96D81B71F6D30067AAEE /* EBCustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D37A96D61B71F6D30067AAEE /* EBCustomCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,9 @@
 		D37A96C41B71E6600067AAEE /* ActivityAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ActivityAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D37A96C91B71E6600067AAEE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D37A96CA1B71E6600067AAEE /* ActivityAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ActivityAppTests.m; sourceTree = "<group>"; };
+		D37A96D41B71F6D30067AAEE /* EBCustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EBCustomCell.h; sourceTree = "<group>"; };
+		D37A96D51B71F6D30067AAEE /* EBCustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EBCustomCell.m; sourceTree = "<group>"; };
+		D37A96D61B71F6D30067AAEE /* EBCustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EBCustomCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +91,9 @@
 				D37A96B51B71E6600067AAEE /* ViewController.h */,
 				D37A96B61B71E6600067AAEE /* ViewController.m */,
 				D37A96B81B71E6600067AAEE /* Main.storyboard */,
+				D37A96D41B71F6D30067AAEE /* EBCustomCell.h */,
+				D37A96D51B71F6D30067AAEE /* EBCustomCell.m */,
+				D37A96D61B71F6D30067AAEE /* EBCustomCell.xib */,
 				D37A96BB1B71E6600067AAEE /* Images.xcassets */,
 				D37A96BD1B71E6600067AAEE /* LaunchScreen.xib */,
 				D37A96AE1B71E6600067AAEE /* Supporting Files */,
@@ -202,6 +210,7 @@
 				D37A96BA1B71E6600067AAEE /* Main.storyboard in Resources */,
 				D37A96BF1B71E6600067AAEE /* LaunchScreen.xib in Resources */,
 				D37A96BC1B71E6600067AAEE /* Images.xcassets in Resources */,
+				D37A96D81B71F6D30067AAEE /* EBCustomCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -222,6 +231,7 @@
 				D37A96B71B71E6600067AAEE /* ViewController.m in Sources */,
 				D37A96B41B71E6600067AAEE /* AppDelegate.m in Sources */,
 				D37A96B11B71E6600067AAEE /* main.m in Sources */,
+				D37A96D71B71F6D30067AAEE /* EBCustomCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

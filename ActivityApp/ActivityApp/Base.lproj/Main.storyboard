@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Ng2-Fh-jmR">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
@@ -16,22 +16,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Tu-ms-YHr">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Tu-ms-YHr">
                                 <rect key="frame" x="8" y="269" width="110" height="30"/>
                                 <state key="normal" title="Open TableView">
                                     <color key="titleColor" red="1" green="0.12635505370589128" blue="0.12631578850610081" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="tableViewButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5ff-Pi-H3i"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ExV-7n-DAU">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ExV-7n-DAU">
                                 <rect key="frame" x="169" y="269" width="143" height="30"/>
                                 <state key="normal" title="Open CollectionView">
                                     <color key="titleColor" red="1" green="0.29426516217344423" blue="0.28417363926179029" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="collectionViewButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8Rq-Hr-bbe"/>
+                                </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Which View ?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zgr-65-ELO">
+                                <rect key="frame" x="107" y="90" width="106" height="56"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.19269265310256822" green="0.70105954859719333" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="ExV-7n-DAU" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="3Tu-ms-YHr" secondAttribute="trailing" constant="8" id="15m-dj-y8h"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ExV-7n-DAU" secondAttribute="bottom" constant="269" id="5YM-iK-1JE"/>
@@ -43,8 +55,31 @@
                             <constraint firstAttribute="trailing" secondItem="ExV-7n-DAU" secondAttribute="trailing" constant="8" id="w4N-Bh-tZi"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="Po2-eL-Gg0"/>
+                    <connections>
+                        <outlet property="collectionViewButton" destination="ExV-7n-DAU" id="7De-I8-NmO"/>
+                        <outlet property="tableViewButton" destination="3Tu-ms-YHr" id="aJh-WT-O0Y"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="710" y="349"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="flG-HB-Ec9">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ng2-Fh-jmR" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="DC3-Ei-8qQ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="K3P-p3-cTH"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Wx-8b-8e4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="178" y="349"/>
         </scene>
