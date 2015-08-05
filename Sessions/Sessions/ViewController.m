@@ -97,7 +97,7 @@ static NSString *identifier = @"tableViewIdentifierForCell";
 
 - (CGFloat )tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-   // return 180.0f;
+   
     EBActivity *activity = [_activities objectAtIndex:indexPath.row];
     
     //for label1
@@ -111,7 +111,7 @@ static NSString *identifier = @"tableViewIdentifierForCell";
     
     NSLog(@"height1=%f",labelRect1.size.height);
     NSLog(@"height2=%f",labelRect2.size.height);
-    return labelRect1.size.height+ 180.0f+labelRect2.size.height;
+    return labelRect1.size.height+ 100.0f+labelRect2.size.height;
 
     
     

@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -14,12 +13,6 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7sQ-UM-Mhe">
-                        <rect key="frame" x="47" y="65" width="120" height="120"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="120" id="kAk-H5-1Ix"/>
-                        </constraints>
-                    </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="customTitle" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KZl-I0-jwt">
                         <rect key="frame" x="183" y="8" width="309" height="121.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -32,22 +25,25 @@
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7sQ-UM-Mhe">
+                        <rect key="frame" x="16" y="16" width="120" height="217.5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="120" id="kAk-H5-1Ix"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="7sQ-UM-Mhe" firstAttribute="leading" secondItem="gyA-V6-WQe" secondAttribute="leading" constant="16" id="0xo-po-tAS"/>
                     <constraint firstAttribute="bottom" secondItem="LdJ-iF-vlc" secondAttribute="bottom" constant="8" id="6is-QH-nry"/>
-                    <constraint firstItem="KZl-I0-jwt" firstAttribute="top" secondItem="gyA-V6-WQe" secondAttribute="top" constant="8" id="Ib5-nx-bXc"/>
-                    <constraint firstItem="7sQ-UM-Mhe" firstAttribute="top" secondItem="gyA-V6-WQe" secondAttribute="topMargin" constant="57" id="TQ7-ly-Lfm"/>
-                    <constraint firstItem="LdJ-iF-vlc" firstAttribute="leading" secondItem="7sQ-UM-Mhe" secondAttribute="trailing" constant="16" id="UmJ-QD-Ymc"/>
-                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="7sQ-UM-Mhe" secondAttribute="bottom" constant="20" id="byy-D0-gnB"/>
+                    <constraint firstItem="KZl-I0-jwt" firstAttribute="top" relation="greaterThanOrEqual" secondItem="gyA-V6-WQe" secondAttribute="top" constant="8" id="Ib5-nx-bXc"/>
+                    <constraint firstItem="LdJ-iF-vlc" firstAttribute="top" secondItem="KZl-I0-jwt" secondAttribute="bottom" constant="24" id="N15-Qe-HE2"/>
+                    <constraint firstItem="LdJ-iF-vlc" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="7sQ-UM-Mhe" secondAttribute="trailing" constant="16" id="UmJ-QD-Ymc"/>
+                    <constraint firstItem="7sQ-UM-Mhe" firstAttribute="top" secondItem="gyA-V6-WQe" secondAttribute="top" constant="16" id="b0I-u0-8E9"/>
+                    <constraint firstAttribute="bottom" secondItem="7sQ-UM-Mhe" secondAttribute="bottom" constant="16" id="l8q-qH-LCX"/>
                     <constraint firstAttribute="trailing" secondItem="KZl-I0-jwt" secondAttribute="trailing" constant="8" id="myI-OH-TTi"/>
                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="7sQ-UM-Mhe" secondAttribute="trailing" constant="120" id="nVP-ya-tsO"/>
-                    <constraint firstItem="7sQ-UM-Mhe" firstAttribute="leading" secondItem="gyA-V6-WQe" secondAttribute="leadingMargin" constant="39" id="thv-6e-RNz"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="7sQ-UM-Mhe" secondAttribute="bottom" constant="56.5" id="vH0-Be-qax"/>
                     <constraint firstAttribute="trailing" secondItem="LdJ-iF-vlc" secondAttribute="trailing" constant="8" id="w85-gm-KPl"/>
                     <constraint firstItem="KZl-I0-jwt" firstAttribute="leading" secondItem="7sQ-UM-Mhe" secondAttribute="trailing" constant="16" id="wi0-KM-kM9"/>
-                    <constraint firstItem="7sQ-UM-Mhe" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="gyA-V6-WQe" secondAttribute="leading" constant="20" id="xQX-b8-M37"/>
-                    <constraint firstItem="LdJ-iF-vlc" firstAttribute="top" relation="greaterThanOrEqual" secondItem="KZl-I0-jwt" secondAttribute="bottom" constant="8" id="ysb-Jh-yqD"/>
-                    <constraint firstItem="7sQ-UM-Mhe" firstAttribute="top" relation="greaterThanOrEqual" secondItem="gyA-V6-WQe" secondAttribute="top" constant="20" id="yuz-Zt-MWO"/>
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" red="0.45945549149999998" green="1" blue="0.93955057600000003" alpha="1" colorSpace="calibratedRGB"/>
