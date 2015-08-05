@@ -97,7 +97,25 @@ static NSString *identifier = @"tableViewIdentifierForCell";
 
 - (CGFloat )tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 180.0f;
+   // return 180.0f;
+    EBActivity *activity = [_activities objectAtIndex:indexPath.row];
+    
+    //for label1
+    NSString *stringForCustomTitile = activity.title;
+    CGSize size1 = CGSizeMake(tableView.frame.size.width-8-70-16-8, CGFLOAT_MAX);
+    CGRect labelRect1 = [stringForCustomTitile boundingRectWithSize:size1 options:NSStringDrawingUsesLineFragmentOrigin attributes:nil context:nil];
+    //for label2
+    NSString *stringForFromPirce = activity.fromPrice;
+    CGSize size2 = CGSizeMake(tableView.frame.size.width-8-70-16-8, CGFLOAT_MAX);
+    CGRect labelRect2 = [stringForFromPirce boundingRectWithSize:size2 options:NSStringDrawingUsesLineFragmentOrigin attributes:nil context:nil];
+    
+    NSLog(@"height1=%f",labelRect1.size.height);
+    NSLog(@"height2=%f",labelRect2.size.height);
+    return labelRect1.size.height+ 180.0f+labelRect2.size.height;
+
+    
+    
+    
     
 }
 
