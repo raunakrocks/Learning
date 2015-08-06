@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>A014EA1A-3DB7-452B-9008-C960F92EFBCA</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>NavigationApp</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>3704BA54C4D5276BD692A37C4A2E0450A67566EB</key>
 		<string>github.com:raunakrocks/Learning.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>NavigationApp/NavigationApp.xcodeproj/project.xcworkspace</string>
+	<string>NavigationApp/NavigationApp.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>3704BA54C4D5276BD692A37C4A2E0450A67566EB</key>
