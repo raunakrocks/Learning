@@ -16,6 +16,8 @@
 		D37A96CB1B71E6600067AAEE /* ActivityAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D37A96CA1B71E6600067AAEE /* ActivityAppTests.m */; };
 		D37A96D71B71F6D30067AAEE /* EBCustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D37A96D51B71F6D30067AAEE /* EBCustomCell.m */; };
 		D37A96D81B71F6D30067AAEE /* EBCustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D37A96D61B71F6D30067AAEE /* EBCustomCell.xib */; };
+		D37A971A1B7330A90067AAEE /* EBParser.m in Sources */ = {isa = PBXBuildFile; fileRef = D37A97171B7330A90067AAEE /* EBParser.m */; };
+		D37A971B1B7330A90067AAEE /* EBActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = D37A97191B7330A90067AAEE /* EBActivity.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +47,10 @@
 		D37A96D41B71F6D30067AAEE /* EBCustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EBCustomCell.h; sourceTree = "<group>"; };
 		D37A96D51B71F6D30067AAEE /* EBCustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EBCustomCell.m; sourceTree = "<group>"; };
 		D37A96D61B71F6D30067AAEE /* EBCustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EBCustomCell.xib; sourceTree = "<group>"; };
+		D37A97161B7330A90067AAEE /* EBParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EBParser.h; sourceTree = "<group>"; };
+		D37A97171B7330A90067AAEE /* EBParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EBParser.m; sourceTree = "<group>"; };
+		D37A97181B7330A90067AAEE /* EBActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EBActivity.h; sourceTree = "<group>"; };
+		D37A97191B7330A90067AAEE /* EBActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EBActivity.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +94,10 @@
 			children = (
 				D37A96B21B71E6600067AAEE /* AppDelegate.h */,
 				D37A96B31B71E6600067AAEE /* AppDelegate.m */,
+				D37A97161B7330A90067AAEE /* EBParser.h */,
+				D37A97171B7330A90067AAEE /* EBParser.m */,
+				D37A97181B7330A90067AAEE /* EBActivity.h */,
+				D37A97191B7330A90067AAEE /* EBActivity.m */,
 				D37A96B51B71E6600067AAEE /* ViewController.h */,
 				D37A96B61B71E6600067AAEE /* ViewController.m */,
 				D37A96B81B71E6600067AAEE /* Main.storyboard */,
@@ -229,7 +239,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D37A96B71B71E6600067AAEE /* ViewController.m in Sources */,
+				D37A971A1B7330A90067AAEE /* EBParser.m in Sources */,
 				D37A96B41B71E6600067AAEE /* AppDelegate.m in Sources */,
+				D37A971B1B7330A90067AAEE /* EBActivity.m in Sources */,
 				D37A96B11B71E6600067AAEE /* main.m in Sources */,
 				D37A96D71B71F6D30067AAEE /* EBCustomCell.m in Sources */,
 			);
@@ -428,6 +440,7 @@
 				D37A96D01B71E6600067AAEE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D37A96D11B71E6600067AAEE /* Build configuration list for PBXNativeTarget "ActivityAppTests" */ = {
 			isa = XCConfigurationList;
@@ -436,6 +449,7 @@
 				D37A96D31B71E6600067AAEE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
