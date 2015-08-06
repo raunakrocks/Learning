@@ -24,10 +24,38 @@
     UITableView *tableView = [[UITableView alloc] initWithFrame:viewController.view.frame];
     [viewController.view addSubview:tableView];
     [self.navigationController pushViewController:viewController animated:YES];
+    //--------
+    NSURLSession *session = [NSURLSession sharedSession];
+    NSURLSessionDataTask *dataTask = [session dataTaskWithURL:[NSURL URLWithString:@"http://wwwexpediacom.trunk.sb.karmalab.net/lx/api/search?location=Rome&startDate=03%2F30%2F2015&endDate=03%2F31%2F2015"] completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        NSArray *activities = [EBParser parseActivities:data];
+        _activities = activities;
+        _rowCount = [activities count];
+        
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            //Code for custom table view cell
+            UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.frame];
+            [tableView setTableFooterView:[[UIView alloc] initWithFrame:CGRectZero]];
+            tableView.translatesAutoresizingMaskIntoConstraints = NO;
+            UINib *cellNib = [UINib nibWithNibName:@"EBCustomCell" bundle:[NSBundle mainBundle]];
+            [tableView registerNib:cellNib forCellReuseIdentifier:@"tableViewIdentifierForCell"];
+            tableView.dataSource = self;
+            tableView.delegate = self;
+            
+            [self.view addSubview:tableView];
+            
+            NSDictionary *viewsDictionary = NSDictionaryOfVariableBindings(tableView);
+            NSArray *constraints = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|[tableView]|" options:0   metrics:nil views:viewsDictionary];
+            [self.view addConstraints:constraints];
+            constraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(0)-[tableView]-(0)-|" options:0   metrics:nil views:viewsDictionary];
+            [self.view addConstraints:constraints];
+        });
+    }];
     
+    [dataTask resume];
     
-    
-
+    //-----------
 }
 - (IBAction)collectionViewButtonPressed:(id)sender {
 
