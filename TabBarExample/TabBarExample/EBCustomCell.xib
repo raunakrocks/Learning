@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="tableViewIdentifierForCell" rowHeight="153" id="bNh-g1-nvu" customClass="EBCustomCell">
+            <rect key="frame" x="0.0" y="0.0" width="500" height="250"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bNh-g1-nvu" id="gyA-V6-WQe">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="customTitle" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KZl-I0-jwt">
+                        <rect key="frame" x="183" y="8" width="309" height="121.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="fromPrice" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LdJ-iF-vlc">
+                        <rect key="frame" x="183" y="149" width="309" height="92.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7sQ-UM-Mhe">
+                        <rect key="frame" x="16" y="16" width="120" height="217.5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="120" id="kAk-H5-1Ix"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="7sQ-UM-Mhe" firstAttribute="leading" secondItem="gyA-V6-WQe" secondAttribute="leading" constant="16" id="0xo-po-tAS"/>
+                    <constraint firstAttribute="bottom" secondItem="LdJ-iF-vlc" secondAttribute="bottom" constant="8" id="6is-QH-nry"/>
+                    <constraint firstItem="KZl-I0-jwt" firstAttribute="top" relation="greaterThanOrEqual" secondItem="gyA-V6-WQe" secondAttribute="top" constant="8" id="Ib5-nx-bXc"/>
+                    <constraint firstItem="LdJ-iF-vlc" firstAttribute="top" secondItem="KZl-I0-jwt" secondAttribute="bottom" constant="24" id="N15-Qe-HE2"/>
+                    <constraint firstItem="LdJ-iF-vlc" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="7sQ-UM-Mhe" secondAttribute="trailing" constant="16" id="UmJ-QD-Ymc"/>
+                    <constraint firstItem="7sQ-UM-Mhe" firstAttribute="top" secondItem="gyA-V6-WQe" secondAttribute="top" constant="16" id="b0I-u0-8E9"/>
+                    <constraint firstAttribute="bottom" secondItem="7sQ-UM-Mhe" secondAttribute="bottom" constant="16" id="l8q-qH-LCX"/>
+                    <constraint firstAttribute="trailing" secondItem="KZl-I0-jwt" secondAttribute="trailing" constant="8" id="myI-OH-TTi"/>
+                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="7sQ-UM-Mhe" secondAttribute="trailing" constant="120" id="nVP-ya-tsO"/>
+                    <constraint firstAttribute="trailing" secondItem="LdJ-iF-vlc" secondAttribute="trailing" constant="8" id="w85-gm-KPl"/>
+                    <constraint firstItem="KZl-I0-jwt" firstAttribute="leading" secondItem="7sQ-UM-Mhe" secondAttribute="trailing" constant="16" id="wi0-KM-kM9"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+            <connections>
+                <outlet property="customFromPrice" destination="LdJ-iF-vlc" id="OPD-MO-Gg1"/>
+                <outlet property="customImageView" destination="7sQ-UM-Mhe" id="UOh-Of-vXp"/>
+                <outlet property="customTitle" destination="KZl-I0-jwt" id="HF0-A0-fW2"/>
+            </connections>
+            <point key="canvasLocation" x="136" y="210"/>
+        </tableViewCell>
+    </objects>
+</document>
