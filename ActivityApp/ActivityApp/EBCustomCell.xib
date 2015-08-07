@@ -46,7 +46,7 @@
                     <constraint firstItem="KZl-I0-jwt" firstAttribute="leading" secondItem="7sQ-UM-Mhe" secondAttribute="trailing" constant="16" id="wi0-KM-kM9"/>
                 </constraints>
             </tableViewCellContentView>
-            <color key="backgroundColor" red="0.45945549149999998" green="1" blue="0.93955057600000003" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
             <connections>
                 <outlet property="customFromPrice" destination="LdJ-iF-vlc" id="OPD-MO-Gg1"/>
                 <outlet property="customImageView" destination="7sQ-UM-Mhe" id="UOh-Of-vXp"/>

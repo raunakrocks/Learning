@@ -30,7 +30,7 @@ static NSString *identifier = @"tableViewIdentifierForCell";
     [tableView registerNib:cellNib forCellReuseIdentifier:@"tableViewIdentifierForCell"];
     tableView.dataSource = self;
     tableView.delegate = self;
-    tableView.backgroundColor = [UIColor blueColor];
+    tableView.backgroundColor = [UIColor orangeColor];
 
    // self.view.backgroundColor = [UIColor blackColor];
     [self.view addSubview:tableView];
@@ -39,7 +39,7 @@ static NSString *identifier = @"tableViewIdentifierForCell";
     NSDictionary *viewsDictionary = NSDictionaryOfVariableBindings(tableView);
     NSArray *constraints = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|[tableView]|" options:0   metrics:nil views:viewsDictionary];
     [self.view addConstraints:constraints];
-    constraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(0)-[tableView]-(0)-|" options:0   metrics:nil views:viewsDictionary];
+    constraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|[tableView]|" options:0   metrics:nil views:viewsDictionary];
     [self.view addConstraints:constraints];
     UIActivityIndicatorView *loadingActivityIndicatorView = [[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
     loadingActivityIndicatorView.frame = CGRectMake(175, 280, 20, 20);

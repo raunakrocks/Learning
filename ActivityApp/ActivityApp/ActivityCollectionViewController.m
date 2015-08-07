@@ -8,14 +8,10 @@
 
 #import "ActivityCollectionViewController.h"
 #import "CustomCollectionViewCell.h"
-
+#import "EBActivity.h"
+#import "EBParser.h"
 @interface ActivityCollectionViewController()
-{
-    NSArray *arrayOfImages;
-    NSArray *arrayOfDescription;
-}
-
-@property (nonatomic, strong)UICollectionView *collectionView;
+@property (nonatomic,strong) NSArray *activities;
 @end
 
 
@@ -25,23 +21,48 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    arrayOfImages = [[NSArray alloc] initWithObjects:@"1.png",@"1.png",@"1.png",@"1.png",@"1.png", nil];
-    arrayOfDescription = [[NSArray alloc] initWithObjects:@"One",@"One",@"One",@"One",@"One",nil];
-    UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
-    self.collectionView = [[UICollectionView alloc] initWithFrame:self.view.frame collectionViewLayout:layout];
-    self.collectionView.backgroundColor = [UIColor redColor];
-    UINib *cellNib = [UINib nibWithNibName:@"CustomCollectionViewCell" bundle:[NSBundle mainBundle]];
-    [self.collectionView registerNib:cellNib forCellWithReuseIdentifier:@"Cell"];
-
-    [self.collectionView setDataSource:self];
-    [self.collectionView setDelegate:self];
     
-    [self.view addSubview:self.collectionView];
+    UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
+    UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:self.view.frame collectionViewLayout:layout];
+    collectionView.backgroundColor = [UIColor yellowColor];
+    collectionView.translatesAutoresizingMaskIntoConstraints = NO;
+    UINib *cellNib = [UINib nibWithNibName:@"CustomCollectionViewCell" bundle:[NSBundle mainBundle]];
+    [collectionView registerNib:cellNib forCellWithReuseIdentifier:@"Cell"];
+
+    [collectionView setDataSource:self];
+    [collectionView setDelegate:self];
+    [self.view addSubview:collectionView];
+    
+    NSDictionary *viewsDictionary = NSDictionaryOfVariableBindings(collectionView);
+    NSArray *constraints = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|[collectionView]|" options:0   metrics:nil views:viewsDictionary];
+    [self.view addConstraints:constraints];
+    constraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|[collectionView]|" options:0   metrics:nil views:viewsDictionary];
+    [self.view addConstraints:constraints];
+    UIActivityIndicatorView *loadingActivityIndicatorView = [[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    loadingActivityIndicatorView.frame = CGRectMake(175, 280, 20, 20);
+    [collectionView addSubview:loadingActivityIndicatorView];
+    [loadingActivityIndicatorView startAnimating];
+
+    // Do any additional setup after loading the view.
+    NSURLSession *session = [NSURLSession sharedSession];
+    NSURLSessionDataTask *dataTask = [session dataTaskWithURL:[NSURL URLWithString:@"http://wwwexpediacom.trunk.sb.karmalab.net/lx/api/search?location=Rome&startDate=03%2F30%2F2015&endDate=03%2F31%2F2015"] completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        
+        NSArray *activities = [EBParser parseActivities:data];
+        self.activities = activities;
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [loadingActivityIndicatorView stopAnimating];
+            [collectionView reloadData];
+        });
+        
+    }];
+    [dataTask resume];
+    
+    
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    return CGSizeMake(200, 200);
+    return CGSizeMake(350,350);
 }
 
 //Delegate methods
@@ -54,17 +75,41 @@
 - (NSInteger) collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
  
-    return [arrayOfDescription count];
+    return [self.activities count];
 }
 
 - (UICollectionViewCell *) collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *cellIdentifier = @"Cell";
-    CustomCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
-    
-    [[cell myImage]setImage:[UIImage imageNamed:[arrayOfImages objectAtIndex:indexPath.item]]];
-    [[cell myDescriptionLabel] setText:[arrayOfDescription objectAtIndex:indexPath.item]];
+ 
+     static NSString *cellIdentifier = @"Cell";
+     CustomCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
+     cell.tag = indexPath.row;
+     EBActivity *activity = [_activities objectAtIndex:indexPath.row];
+     dispatch_queue_t imageQueue = dispatch_queue_create("Image Queue", NULL);
+    [[cell myDescriptionLabel] setText:activity.title];
+    [[cell priceLabel] setText:activity.fromPrice];
+    dispatch_async(imageQueue, ^{
+        
+        NSLog(@"%d", [NSThread isMainThread]);
+        NSString *imageURL = [NSString stringWithFormat:@"http:%@",activity.imageURL];
+        NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:imageURL]];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            if(cell.tag == indexPath.row)
+            {
+                cell.myImage.image = [UIImage imageWithData:imageData];
+            }
+            else
+            {
+                NSLog(@"GFauled match");
+            }
+        });
+        
+    });
+
     return cell;
+   
     
 }
 
