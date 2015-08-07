@@ -12,26 +12,39 @@
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                 <rect key="frame" x="0.0" y="0.0" width="500" height="275"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8ke-9A-JMD">
-                        <rect key="frame" x="0.0" y="0.0" width="500" height="275"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8ke-9A-JMD">
+                        <rect key="frame" x="10" y="10" width="480" height="255"/>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Price" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CtF-f9-NGi">
-                        <rect key="frame" x="243" y="239" width="221" height="36"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="osT-xm-l37">
+                        <rect key="frame" x="10" y="113" width="480" height="58.5"/>
+                        <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <rect key="contentStretch" x="0.0" y="0.0" width="0.94999999999999996" height="0.94999999999999996"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="highlightedColor" red="0.40000000596046448" green="0.40000000596046448" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Price" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="CtF-f9-NGi">
+                        <rect key="frame" x="225" y="191" width="248.5" height="46.5"/>
                         <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="osT-xm-l37">
-                        <rect key="frame" x="0.0" y="198" width="500" height="41"/>
-                        <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                        <color key="highlightedColor" red="0.40000000596046448" green="0.40000000596046448" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
-                    </label>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="8ke-9A-JMD" secondAttribute="bottom" constant="10" id="6mc-OH-6L0"/>
+                <constraint firstItem="CtF-f9-NGi" firstAttribute="top" relation="greaterThanOrEqual" secondItem="osT-xm-l37" secondAttribute="bottom" constant="10" id="8bD-0h-vxd"/>
+                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="CtF-f9-NGi" secondAttribute="bottom" constant="10" id="Dvh-zX-QbT"/>
+                <constraint firstItem="osT-xm-l37" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="15" id="I7a-O7-0rI"/>
+                <constraint firstAttribute="trailing" secondItem="osT-xm-l37" secondAttribute="trailing" constant="15" id="eLU-OI-zgd"/>
+                <constraint firstAttribute="trailing" secondItem="8ke-9A-JMD" secondAttribute="trailing" constant="10" id="hWe-9d-hT5"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="CtF-f9-NGi" secondAttribute="trailing" constant="16" id="s4v-Cq-RBT"/>
+                <constraint firstItem="8ke-9A-JMD" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="vGj-6m-4MX"/>
+                <constraint firstItem="CtF-f9-NGi" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="200" id="vHA-y4-j4Y"/>
+                <constraint firstItem="8ke-9A-JMD" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="vsE-DE-Ebe"/>
+            </constraints>
             <size key="customSize" width="448" height="274"/>
             <connections>
                 <outlet property="customImageView" destination="8ke-9A-JMD" id="XCg-Oe-Vbg"/>
