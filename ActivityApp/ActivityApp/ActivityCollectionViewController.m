@@ -24,7 +24,7 @@
     
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
     UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:self.view.frame collectionViewLayout:layout];
-    collectionView.backgroundColor = [UIColor yellowColor];
+    collectionView.backgroundColor = [UIColor orangeColor];
     collectionView.translatesAutoresizingMaskIntoConstraints = NO;
     UINib *cellNib = [UINib nibWithNibName:@"CustomCollectionViewCell" bundle:[NSBundle mainBundle]];
     [collectionView registerNib:cellNib forCellWithReuseIdentifier:@"Cell"];
@@ -86,7 +86,7 @@
      cell.tag = indexPath.row;
      EBActivity *activity = [_activities objectAtIndex:indexPath.row];
      dispatch_queue_t imageQueue = dispatch_queue_create("Image Queue", NULL);
-    [[cell myDescriptionLabel] setText:activity.title];
+    [[cell customTitle] setText:activity.title];
     [[cell priceLabel] setText:activity.fromPrice];
     dispatch_async(imageQueue, ^{
         
@@ -98,7 +98,7 @@
             
             if(cell.tag == indexPath.row)
             {
-                cell.myImage.image = [UIImage imageWithData:imageData];
+                cell.customImageView.image = [UIImage imageWithData:imageData];
             }
             else
             {

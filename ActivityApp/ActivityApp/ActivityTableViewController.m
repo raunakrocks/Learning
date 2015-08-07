@@ -32,7 +32,6 @@ static NSString *identifier = @"tableViewIdentifierForCell";
     tableView.delegate = self;
     tableView.backgroundColor = [UIColor orangeColor];
 
-   // self.view.backgroundColor = [UIColor blackColor];
     [self.view addSubview:tableView];
     
     

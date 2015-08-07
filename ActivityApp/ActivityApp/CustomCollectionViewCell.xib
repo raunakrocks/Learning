@@ -12,18 +12,18 @@
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                 <rect key="frame" x="0.0" y="0.0" width="500" height="275"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8ke-9A-JMD">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8ke-9A-JMD">
                         <rect key="frame" x="0.0" y="0.0" width="500" height="275"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Price" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CtF-f9-NGi">
-                        <rect key="frame" x="240" y="225" width="221" height="36"/>
+                        <rect key="frame" x="243" y="239" width="221" height="36"/>
                         <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="osT-xm-l37">
-                        <rect key="frame" x="0.0" y="186" width="500" height="41"/>
+                        <rect key="frame" x="0.0" y="198" width="500" height="41"/>
                         <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -32,19 +32,13 @@
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
-            <constraints>
-                <constraint firstItem="8ke-9A-JMD" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="BtA-XH-KlB"/>
-                <constraint firstAttribute="bottom" secondItem="8ke-9A-JMD" secondAttribute="bottom" id="V5a-nP-0vl"/>
-                <constraint firstItem="8ke-9A-JMD" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="gSZ-Wq-k8k"/>
-                <constraint firstAttribute="trailing" secondItem="8ke-9A-JMD" secondAttribute="trailing" id="zQm-9u-4LT"/>
-            </constraints>
             <size key="customSize" width="448" height="274"/>
             <connections>
-                <outlet property="myDescriptionLabel" destination="osT-xm-l37" id="OSU-JU-dsL"/>
-                <outlet property="myImage" destination="8ke-9A-JMD" id="sqh-2q-bqP"/>
+                <outlet property="customImageView" destination="8ke-9A-JMD" id="XCg-Oe-Vbg"/>
+                <outlet property="customTitle" destination="osT-xm-l37" id="Omw-p0-tvA"/>
                 <outlet property="priceLabel" destination="CtF-f9-NGi" id="2u9-dr-HHD"/>
             </connections>
-            <point key="canvasLocation" x="368" y="248.5"/>
+            <point key="canvasLocation" x="448" y="248.5"/>
         </collectionViewCell>
     </objects>
 </document>

@@ -14,4 +14,12 @@
     // Initialization code
 }
 
+- (void) prepareForReuse
+{
+    [super prepareForReuse];
+    
+    self.customImageView.image = nil;
+}
+
+
 @end
