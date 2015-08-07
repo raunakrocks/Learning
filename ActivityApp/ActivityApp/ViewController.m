@@ -12,7 +12,6 @@
 #import "EBParser.h"
 #import "ActivityTableViewController.h"
 #import "ActivityCollectionViewController.h"
-
 @interface ViewController ()
 
 
@@ -34,13 +33,10 @@
 
     NSLog(@"Collection View Button Pressed");
     
+    ActivityCollectionViewController *viewController = [[ActivityCollectionViewController alloc]init];
+    [self.navigationController pushViewController:viewController animated:YES];
     
-//    UIViewController *viewController = [[UIViewController alloc] init];
-//    viewController.view.backgroundColor = [UIColor blueColor];
-//    UICollectionViewLayout *layout = [[UICollectionViewLayout alloc]init];
-//    UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:viewController.view.frame collectionViewLayout:layout];
-//    [viewController.view addSubview:collectionView];
-//    [self.navigationController pushViewController:viewController animated:YES];
+
     
 }
 

@@ -19,7 +19,10 @@
 		D37A971A1B7330A90067AAEE /* EBParser.m in Sources */ = {isa = PBXBuildFile; fileRef = D37A97171B7330A90067AAEE /* EBParser.m */; };
 		D37A971B1B7330A90067AAEE /* EBActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = D37A97191B7330A90067AAEE /* EBActivity.m */; };
 		D37A971E1B7334C20067AAEE /* ActivityTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D37A971D1B7334C20067AAEE /* ActivityTableViewController.m */; };
-		D37A97211B7363D40067AAEE /* ActivityCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D37A97201B7363D40067AAEE /* ActivityCollectionViewController.m */; };
+		D37A977A1B746DCD0067AAEE /* ActivityCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D37A97791B746DCD0067AAEE /* ActivityCollectionViewController.m */; };
+		D37A977E1B746E530067AAEE /* CustomCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D37A977C1B746E530067AAEE /* CustomCollectionViewCell.m */; };
+		D37A977F1B746E530067AAEE /* CustomCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D37A977D1B746E530067AAEE /* CustomCollectionViewCell.xib */; };
+		D37A97811B7473210067AAEE /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = D37A97801B7473210067AAEE /* 1.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,8 +58,12 @@
 		D37A97191B7330A90067AAEE /* EBActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EBActivity.m; sourceTree = "<group>"; };
 		D37A971C1B7334C20067AAEE /* ActivityTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityTableViewController.h; sourceTree = "<group>"; };
 		D37A971D1B7334C20067AAEE /* ActivityTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityTableViewController.m; sourceTree = "<group>"; };
-		D37A971F1B7363D40067AAEE /* ActivityCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityCollectionViewController.h; sourceTree = "<group>"; };
-		D37A97201B7363D40067AAEE /* ActivityCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityCollectionViewController.m; sourceTree = "<group>"; };
+		D37A97781B746DCD0067AAEE /* ActivityCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityCollectionViewController.h; sourceTree = "<group>"; };
+		D37A97791B746DCD0067AAEE /* ActivityCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityCollectionViewController.m; sourceTree = "<group>"; };
+		D37A977B1B746E530067AAEE /* CustomCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCollectionViewCell.h; sourceTree = "<group>"; };
+		D37A977C1B746E530067AAEE /* CustomCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCollectionViewCell.m; sourceTree = "<group>"; };
+		D37A977D1B746E530067AAEE /* CustomCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomCollectionViewCell.xib; sourceTree = "<group>"; };
+		D37A97801B7473210067AAEE /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +105,7 @@
 		D37A96AD1B71E6600067AAEE /* ActivityApp */ = {
 			isa = PBXGroup;
 			children = (
+				D37A97801B7473210067AAEE /* 1.png */,
 				D37A96B21B71E6600067AAEE /* AppDelegate.h */,
 				D37A96B31B71E6600067AAEE /* AppDelegate.m */,
 				D37A97161B7330A90067AAEE /* EBParser.h */,
@@ -106,11 +114,14 @@
 				D37A97191B7330A90067AAEE /* EBActivity.m */,
 				D37A96B51B71E6600067AAEE /* ViewController.h */,
 				D37A96B61B71E6600067AAEE /* ViewController.m */,
-				D37A971F1B7363D40067AAEE /* ActivityCollectionViewController.h */,
-				D37A97201B7363D40067AAEE /* ActivityCollectionViewController.m */,
+				D37A97781B746DCD0067AAEE /* ActivityCollectionViewController.h */,
+				D37A97791B746DCD0067AAEE /* ActivityCollectionViewController.m */,
 				D37A971C1B7334C20067AAEE /* ActivityTableViewController.h */,
 				D37A971D1B7334C20067AAEE /* ActivityTableViewController.m */,
 				D37A96B81B71E6600067AAEE /* Main.storyboard */,
+				D37A977B1B746E530067AAEE /* CustomCollectionViewCell.h */,
+				D37A977C1B746E530067AAEE /* CustomCollectionViewCell.m */,
+				D37A977D1B746E530067AAEE /* CustomCollectionViewCell.xib */,
 				D37A96D41B71F6D30067AAEE /* EBCustomCell.h */,
 				D37A96D51B71F6D30067AAEE /* EBCustomCell.m */,
 				D37A96D61B71F6D30067AAEE /* EBCustomCell.xib */,
@@ -230,6 +241,8 @@
 				D37A96BA1B71E6600067AAEE /* Main.storyboard in Resources */,
 				D37A96BF1B71E6600067AAEE /* LaunchScreen.xib in Resources */,
 				D37A96BC1B71E6600067AAEE /* Images.xcassets in Resources */,
+				D37A97811B7473210067AAEE /* 1.png in Resources */,
+				D37A977F1B746E530067AAEE /* CustomCollectionViewCell.xib in Resources */,
 				D37A96D81B71F6D30067AAEE /* EBCustomCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -249,11 +262,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				D37A96B71B71E6600067AAEE /* ViewController.m in Sources */,
-				D37A97211B7363D40067AAEE /* ActivityCollectionViewController.m in Sources */,
+				D37A977A1B746DCD0067AAEE /* ActivityCollectionViewController.m in Sources */,
 				D37A971A1B7330A90067AAEE /* EBParser.m in Sources */,
 				D37A96B41B71E6600067AAEE /* AppDelegate.m in Sources */,
 				D37A971E1B7334C20067AAEE /* ActivityTableViewController.m in Sources */,
 				D37A971B1B7330A90067AAEE /* EBActivity.m in Sources */,
+				D37A977E1B746E530067AAEE /* CustomCollectionViewCell.m in Sources */,
 				D37A96B11B71E6600067AAEE /* main.m in Sources */,
 				D37A96D71B71F6D30067AAEE /* EBCustomCell.m in Sources */,
 			);
