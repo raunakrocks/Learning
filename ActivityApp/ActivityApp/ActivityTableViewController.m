@@ -51,13 +51,6 @@ static NSString *identifier = @"tableViewIdentifierForCell";
     NSDictionary *viewsDictionary = NSDictionaryOfVariableBindings(tableView,backNavBar);
     NSArray *constraints = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|[tableView]|" options:0   metrics:nil views:viewsDictionary];
     [self.view addConstraints:constraints];
-    //Using CompactConstraints
-    NSDictionary *views = @{
-                            @tableView : tableView;
-                            };
-    
-    
-    
     constraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|[backNavBar]-[tableView]|" options:0   metrics:nil views:viewsDictionary];
     [self.view addConstraints:constraints];
     UIActivityIndicatorView *loadingActivityIndicatorView = [[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
