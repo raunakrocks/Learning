@@ -10,6 +10,7 @@
 #import "EBCustomCell.h"
 #import "EBActivity.h"
 #import "EBParser.h"
+#import "CompactConstraint/CompactConstraint.h"
 static NSString *identifier = @"tableViewIdentifierForCell";
 
 @interface ActivityTableViewController ()
@@ -31,14 +32,33 @@ static NSString *identifier = @"tableViewIdentifierForCell";
     tableView.dataSource = self;
     tableView.delegate = self;
     tableView.backgroundColor = [UIColor orangeColor];
-
+  
     [self.view addSubview:tableView];
     
+    UINavigationBar *backNavBar = [[UINavigationBar alloc] initWithFrame:CGRectMake(0, 0, 380, 44)];
+    [self.view addSubview:backNavBar];
     
-    NSDictionary *viewsDictionary = NSDictionaryOfVariableBindings(tableView);
+    
+    /*Button for back */
+    
+    UIButton *backButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [backButton addTarget:self
+                   action:@selector(backButtonPressed) forControlEvents:UIControlEventTouchUpInside];
+    [backButton setTitle:@"Close" forState:UIControlStateNormal];
+    backButton.frame = CGRectMake(-40.0, 0.0, 160.0, 40.0);
+    [self.view addSubview:backButton];
+    
+    NSDictionary *viewsDictionary = NSDictionaryOfVariableBindings(tableView,backNavBar);
     NSArray *constraints = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|[tableView]|" options:0   metrics:nil views:viewsDictionary];
     [self.view addConstraints:constraints];
-    constraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|[tableView]|" options:0   metrics:nil views:viewsDictionary];
+    //Using CompactConstraints
+    NSDictionary *views = @{
+                            @tableView : tableView;
+                            };
+    
+    
+    
+    constraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|[backNavBar]-[tableView]|" options:0   metrics:nil views:viewsDictionary];
     [self.view addConstraints:constraints];
     UIActivityIndicatorView *loadingActivityIndicatorView = [[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
     loadingActivityIndicatorView.frame = CGRectMake(175, 280, 20, 20);
@@ -52,7 +72,12 @@ static NSString *identifier = @"tableViewIdentifierForCell";
         self.activities = activities;
         dispatch_async(dispatch_get_main_queue(), ^{
             [loadingActivityIndicatorView stopAnimating];
-                [tableView reloadData];
+//            [UIView transitionFromView:self.view
+//                                toView:tableView
+//                              duration:2
+//                               options:UIViewAnimationOptionTransitionCurlDown
+//                            completion:nil];
+            [tableView reloadData];
         });
         
         }];
@@ -119,16 +144,28 @@ static NSString *identifier = @"tableViewIdentifierForCell";
     return labelRect1.size.height+ 100.0f+labelRect2.size.height;
   
 }
-                       
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+- (void) backButtonPressed
 {
-    return @"Activities App";
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
-                       
+
+//                       
+//- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+//{
+//    return @"Activities App";
+//}
+
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+- (BOOL) prefersStatusBarHidden
+{
+    return YES;
+}
+
 
 /*
 #pragma mark - Navigation
@@ -137,6 +174,7 @@ static NSString *identifier = @"tableViewIdentifierForCell";
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+
 }
 */
 

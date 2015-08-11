@@ -25,7 +25,12 @@
     
     NSLog(@"Table View Button Pressed");
     ActivityTableViewController *viewController = [[ActivityTableViewController alloc] init];
-    [self.navigationController pushViewController:viewController animated:YES];
+   
+    [self presentViewController:viewController animated:YES completion:nil];
+    
+    
+    
+//    [self.navigationController pushViewController:viewController animated:YES];
 
 }
 
@@ -43,8 +48,37 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+        
     
 }
+
+
+- (NSTimeInterval)transitionDuration:(id <UIViewControllerContextTransitioning>)transitionContext{
+    return 2;
+}
+
+
+- (void)animateTransition:(id <UIViewControllerContextTransitioning>)transitionContext{
+    
+    
+    UIViewController *fromVC=[transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
+    UIViewController *toVC=[transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
+    UIView *contextView=[transitionContext containerView];
+    
+    [contextView insertSubview:toVC.view belowSubview:fromVC.view];
+    
+    [UIView animateWithDuration:[self transitionDuration:transitionContext] animations:^{
+        fromVC.view.alpha=0;
+        toVC.view.alpha=1;
+    }completion:^(BOOL finished) {
+        [transitionContext completeTransition:![transitionContext transitionWasCancelled]];
+    }];
+    
+}
+
+
+
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

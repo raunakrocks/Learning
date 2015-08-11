@@ -5,7 +5,7 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>6D67DA4B-6519-4E9D-A1FE-26D252D0DDEE</string>
+	<string>746929D3-AECE-440E-97D7-C3845226DC57</string>
 	<key>IDESourceControlProjectName</key>
 	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
@@ -14,7 +14,7 @@
 		<string>github.com:raunakrocks/Learning.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>AutolayoutExample/CustomCell2.xcodeproj/project.xcworkspace</string>
+	<string>PresentationViewExample/PresentationViewExample.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>3704BA54C4D5276BD692A37C4A2E0450A67566EB</key>

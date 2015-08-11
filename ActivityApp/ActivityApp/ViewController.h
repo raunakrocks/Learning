@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface ViewController : UIViewController
+#import "ActivityTableViewController.h"
+@interface ViewController : UIViewController<UIViewControllerAnimatedTransitioning>
 
 
 @end

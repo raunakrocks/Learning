@@ -31,6 +31,8 @@
 
     [collectionView setDataSource:self];
     [collectionView setDelegate:self];
+    
+    
     [self.view addSubview:collectionView];
     
     NSDictionary *viewsDictionary = NSDictionaryOfVariableBindings(collectionView);
@@ -112,5 +114,12 @@
    
     
 }
+
+
+- (BOOL) prefersStatusBarHidden
+{
+    return YES;
+}
+
 
 @end

@@ -7,7 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+@protocol ButtonPressedProtocolDelegate<NSObject>
+
+- (void)backButtonPressed;
+
+@end
 
 @interface ActivityTableViewController : UIViewController<UITableViewDelegate, UITableViewDataSource>
+
+
 
 @end
