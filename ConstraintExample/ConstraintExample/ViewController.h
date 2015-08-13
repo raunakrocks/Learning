@@ -13,5 +13,7 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *myLabel;
 
+@property (weak, nonatomic) IBOutlet UIButton *button1;
+@property (weak, nonatomic) IBOutlet UIButton *button2;
 @end
 

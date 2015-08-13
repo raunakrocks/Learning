@@ -27,17 +27,37 @@
     NSDictionary *views = @{
                            @"button" : self.myButton,
                            @"label" : self.myLabel,
+                           @"button1" : self.button1,
+                           @"button2" :self.button2,
+                           @"view" : self.view
                            };
     NSDictionary *metrics = @{
-                                  @"buttonHeight" : @(36),
-                                  @"labelHeight" : @(44),
-                              };
+                                  @"buttonHeight" : @(136),
+                                  @"labelHeight" : @(444),
+                                                               };
     [self.view addCompactConstraints:@[
                                       @"V:|-(100)-[button]",
                                       @"H:|-(10)-[button]-(10)-|",
-                                      @"V:|[label]|",
-                                     // @"button.height = buttonHeight"
+                                      @"label.height = labelHeight",
+                                 
                                        ] metrics:metrics views:views];
+    
+
+   
+    [self.view addCompactConstraints:@[
+                                       @"H:|-(90)-[button1]-(50)-[button2]",
+                                       @"V:|-(300)-[button1]",
+                                       @"V:|-(300)-[button2]",
+                                       @"H:[button1]-(50)-[button2(==button1)]",
+                                       @"V:[button2(==button1)]",
+                                       @"button1.height = buttonHeight",
+                                       @"V:[label]-(30)-[button1]",
+                                       @"V:[button1]-(>=40)-|",
+                                      
+                                       ] metrics:metrics views:views];
+
+    
+    
     
 }
 
