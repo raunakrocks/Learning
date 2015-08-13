@@ -67,6 +67,20 @@
      map:^id(NSNumber *passwordValid) {
          return [passwordValid boolValue] ? [UIColor clearColor] : [UIColor yellowColor];
      }];
+    RACSignal *signUpActiveSignal =
+    [RACSignal combineLatest:@[validUsernameSignal, validPasswordSignal]
+                      reduce:^id(NSNumber *usernameValid, NSNumber *passwordValid) {
+                          return @([usernameValid boolValue] && [passwordValid boolValue]);
+                      }];
+    [signUpActiveSignal subscribeNext:^(NSNumber *signupActive) {
+        self.signInButton.enabled = [signupActive boolValue];
+    }];
+    
+    [[self.signInButton
+      rac_signalForControlEvents:UIControlEventTouchUpInside]
+     subscribeNext:^(id x) {
+         NSLog(@"button clicked");
+     }];
     
 
 }

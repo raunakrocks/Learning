@@ -38,11 +38,18 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y2U-aZ-6AN">
+                                <rect key="frame" x="204" y="269" width="48" height="30"/>
+                                <state key="normal" title="Sign In">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
                         <outlet property="password" destination="44F-w2-EUR" id="oBJ-sG-GyP"/>
+                        <outlet property="signInButton" destination="y2U-aZ-6AN" id="u0G-S9-2Jq"/>
                         <outlet property="userName" destination="332-l7-des" id="lJs-Q9-WlS"/>
                     </connections>
                 </viewController>
