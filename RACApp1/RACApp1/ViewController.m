@@ -76,13 +76,30 @@
         self.signInButton.enabled = [signupActive boolValue];
     }];
     
+//    [[self.signInButton
+//      rac_signalForControlEvents:UIControlEventTouchUpInside]
+//     subscribeNext:^(id x) {
+//         NSLog(@"button clicked");
+//     }];
     [[self.signInButton
       rac_signalForControlEvents:UIControlEventTouchUpInside]
      subscribeNext:^(id x) {
          NSLog(@"button clicked");
      }];
     
-
+    
+    
+    
+//    [[RACSignal merge:@[validUsernameSignal,validPasswordSignal ]
+//      ]
+//     subscribeNext:^(id x) {
+//         NSLog(@"Tapped [%@]", x);
+//     
+//     }] ;
+//    RACSignal *signal = [RACObserve(self, userName) ];
+//    
+    
+    
 }
 
 - (BOOL)prefersStatusBarHidden{

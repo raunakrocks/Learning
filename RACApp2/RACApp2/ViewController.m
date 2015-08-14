@@ -7,8 +7,9 @@
 //
 
 #import "ViewController.h"
-
-@interface ViewController ()
+#import <ReactiveCocoa/ReactiveCocoa.h>
+@interface ViewController ()<UITextFieldDelegate>
+@property (strong, nonatomic) IBOutlet UITextField *username;
 
 @end
 
@@ -16,7 +17,52 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    // Do any additional setup after loading the view,
+
+    NSArray *numbers = @ [ @1, @2, @3];
+    RACSequence *sequence = [ numbers.rac_sequence map:^id(NSNumber *number) {
+        return @([number intValue] * [number intValue]);
+    }];
+    NSLog(@"%@",sequence.head);
+    
+    //Using RACObserve
+    
+    [self.username becomeFirstResponder];
+    [RACObserve(self, username.text)
+     subscribeNext:^(NSString *name) {
+        NSLog(@"%@", name);
+    }];
+
+
+    self.username.text = @"Hi";
+
+    
+    
+    
+    
+}
+- (IBAction)doneButtonClicked:(id)sender {
+    NSLog(@"self.textField.text =%@", self.username.text);
+
+}
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    NSLog(@"textFieldDidBeginEditing");
+    
+}
+
+- (IBAction)touchUpInside:(id)sender {
+    NSLog(@"self.touchupinside");
+}
+
+- (IBAction)valueChanged:(id)sender {
+    NSLog(@"self.textField.text =%@", self.username.text);
+}
+
+- (BOOL)prefersStatusBarHidden
+{
+    return YES;
 }
 
 - (void)didReceiveMemoryWarning {
