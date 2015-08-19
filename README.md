@@ -25,11 +25,11 @@ Following are the Learning projects for Learning Objective C/iOS Development :
           
           Description:  
 
-* RACApp1
+*RACApp1
           
           Description:
 
-* Sessions
+*Sessions
                 
           Description:
 
