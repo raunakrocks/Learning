@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="sU7-tw-VlE">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <scenes>
+        <!--My Maps-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsBuildings="NO" showsPointsOfInterest="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pc7-Vq-wBZ">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Pc7-Vq-wBZ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="8dJ-qK-B31"/>
+                            <constraint firstAttribute="trailing" secondItem="Pc7-Vq-wBZ" secondAttribute="trailing" id="P9J-rA-zSk"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Pc7-Vq-wBZ" secondAttribute="bottom" id="SEb-kj-VMX"/>
+                            <constraint firstItem="Pc7-Vq-wBZ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="uom-af-JGm"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="My Maps" id="WhN-Fa-Whl"/>
+                    <connections>
+                        <outlet property="mapView" destination="Pc7-Vq-wBZ" id="xzc-I5-nJ9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="713" y="348"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ukj-2i-RqV">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="sU7-tw-VlE" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="r1j-7v-X3n">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="cjD-zg-TJY"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lcY-HO-d9H" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="181" y="348"/>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
