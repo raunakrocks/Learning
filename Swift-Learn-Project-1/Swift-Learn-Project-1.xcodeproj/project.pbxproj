@@ -156,6 +156,7 @@
 		D38826F41B95CD500033DB60 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = "Raunak Talwar";
 				TargetAttributes = {
@@ -411,6 +412,7 @@
 				D388271D1B95CD500033DB60 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D388271E1B95CD500033DB60 /* Build configuration list for PBXNativeTarget "Swift-Learn-Project-1Tests" */ = {
 			isa = XCConfigurationList;
@@ -419,6 +421,7 @@
 				D38827201B95CD500033DB60 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
